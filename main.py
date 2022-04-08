@@ -1,22 +1,31 @@
-from ssl import ALERT_DESCRIPTION_USER_CANCELLED
-
-
 class Artist:
 
-    artist_id_sequence = 100
+    artist_sequence = 100
 
-    def __init__(self, artist_id, name, genre, dob):
-        self.artist_id = Artist.artist_id_sequence
-        artist_id_sequence += 1
+    def __init__(self, name, genre, dob):
         self.name = name
         self.genre = genre 
         self.dob = dob
+        self.artist_id = Artist.artist_sequence
+        Artist.artist_sequence += 1
 
-    def artist_check(self):
-        for i in artists():
-            if(i == self):
+    def artist_listen(self):
+        print(f"Did you know that {self.name}'s birthday is {self.dob}? (artist id: {self.artist_id})")
+
+    def artist_check(str):
+        for i in artists[]:
+            if(i == str):
                 print('Artist is already in here!')
+            else:
+                print('Artist not found')
 
+artists = []   
+artists.append(Artist('Taylor Swift', 'Pop', '12/13/89'))
+artists.append(Artist('Phoebe Bridgers', 'Alternative', '8/17/94'))
+artists.append(Artist('Mitski', 'Alternative', '9/27/90'))
+
+for artist in artists:
+    artist.artist_check()
 
 class Song:
     def __init__(self, artist_id, title, length, lyrics):
