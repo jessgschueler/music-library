@@ -44,6 +44,13 @@ phoebe = Artist('Phoebe Bridgers', 'Alternative', '8/17/94')
 grimes = Artist('Grimes', 'Pop', '3/17/88')
 mitski = Artist('Mitski', 'Alternative', '9/27/90')
 
+for round in range(1,3):
+    a = input('Enter artist name...')
+    b = input('Enter artist genre...')
+    c = input('Enter artist birthday (m/d/yy)...')
+    artist1 = Artist(a, b, c)
+    
+
 artist_dict = dict(zip(Artist.artist_ids, Artist.artists))
 print(artist_dict)
 
