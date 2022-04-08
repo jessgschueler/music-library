@@ -24,6 +24,9 @@ mitski = Artist('Mitski', 'Alternative', '9/27/90')
 grimes = Artist('Grimes', 'Pop', '3/17/88')
 
 
+artist_dict = {
+    '{self.artist_id}':'{self.name}'
+}
 
 
 class Song:
@@ -32,19 +35,11 @@ class Song:
         self.title = title
         self.length = length 
         self.lyrics = lyrics
-    def get_artist_id(self):
-        return self.artist_id
-    def get_title(self):
-        return self.title
-    def get_length(self):
-        return self.length
-    def get_lyrics(self):
-        return self.lyrics
 
-    def song_check(self):
-        if(self.artist_id == artist_id):
-            print(f'This song was created by {self.artist_id}')
+    def get_artist_id(self):
+        print(f'The Artist Id is {self.artist_id}')
+   
 
 atw = Song('100', 'All To Well', '10:13', 'atwlyrics')
 
-atw.song_check()
+atw.get_artist_id()
