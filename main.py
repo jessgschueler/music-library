@@ -19,28 +19,23 @@ class Artist:
         else:
             print('Artist not found.')
 
-    @staticmethod
-    def print_artists():
-        for a in Artist.artists:
-            print(f'{a}')
-
-    @staticmethod
-    def print_artist_ids():
-        for a in Artist.artist_ids:
-            print(f'{a}')
-
 class Song:
+
+    artist_id_song = []
+    titles = []
 
     def __init__(self, artist_id, title, length, lyrics):
         self.artist_id = artist_id
+        Song.artist_id_song.append(artist_id)
         self.title = title
+        Song.titles.append(title)
         self.length = length 
         self.lyrics = lyrics
 
     def get_artist_id(self):
         print(f'The Artist Id is {self.artist_id}')
    
-atw = Song('101', 'All To Well', '10:13', 'atwlyrics')
+atw = Song(101, 'All To Well', '10:13', 'atwlyrics')
 
 atw.get_artist_id()
 
@@ -49,9 +44,8 @@ phoebe = Artist('Phoebe Bridgers', 'Alternative', '8/17/94')
 grimes = Artist('Grimes', 'Pop', '3/17/88')
 mitski = Artist('Mitski', 'Alternative', '9/27/90')
 
-Artist.print_artists()
-Artist.print_artist_ids()
-
 artist_dict = dict(zip(Artist.artist_ids, Artist.artists))
-
 print(artist_dict)
+
+song_dict = dict(zip(Song.artist_id_song, Song.titles))
+print(song_dict)
